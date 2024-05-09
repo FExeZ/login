@@ -7,10 +7,7 @@ package com.mycompany.login.persistencia;
 import com.mycompany.login.logica.Usuario;
 import java.util.List;
 
-/**
- *
- * @author Marisa
- */
+
 public class ControladoraPersistencia {
     
     UsuarioJpaController usuJpa = new UsuarioJpaController();

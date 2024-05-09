@@ -6,10 +6,7 @@ package com.mycompany.login.igu;
 
 import com.mycompany.login.logica.Controladora;
 
-/**
- *
- * @author Marisa
- */
+
 public class Principal extends javax.swing.JFrame {
     Controladora control;
 

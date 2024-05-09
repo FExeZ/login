@@ -7,13 +7,14 @@ package com.mycompany.login.logica;
 import com.mycompany.login.persistencia.ControladoraPersistencia;
 import java.util.List;
 
-/**
- *
- * @author Marisa
- */
+
 public class Controladora {
     
-    ControladoraPersistencia controlPersis = new ControladoraPersistencia();
+    ControladoraPersistencia controlPersis;
+    
+    public Controladora(){
+        controlPersis = new ControladoraPersistencia();
+    }
 
     public String validadUsuario(String usuario, String contrasenia) {
         
@@ -23,9 +24,9 @@ public class Controladora {
         for (Usuario usu : listaUsuarios){
             if (usu.getNombreUsuario().equals(usuario)){
                 if(usu.getContraseña().equals(contrasenia)){
-                    mensaje = "Usuario y contraseña correctos. Bienvenido/a!";
+                    return "Usuario y contraseña correctos. Bienvenido/a!";
                 } else {
-                    mensaje = "Contraseña incorrecta";
+                    return "Contraseña incorrecta";
                 }
             }else {
                 mensaje = "Usuario no encontrado";
