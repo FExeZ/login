@@ -4,17 +4,22 @@
  */
 package com.mycompany.login.igu;
 
+import com.mycompany.login.logica.Controladora;
+
 /**
  *
  * @author Marisa
  */
 public class Principal extends javax.swing.JFrame {
+    Controladora control;
 
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
+        control = new Controladora();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +55,11 @@ public class Principal extends javax.swing.JFrame {
         jSeparator2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +161,17 @@ public class Principal extends javax.swing.JFrame {
         txtMensaje.setText("");
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        
+        String usuario = txtUsuario.getText();
+        String contrasenia = txtContrasenia.getText();
+        String mensaje = control.validadUsuario(usuario,contrasenia);
+        
+        txtMensaje.setText(mensaje);
+        
+        
+    }//GEN-LAST:event_btnLoginActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
